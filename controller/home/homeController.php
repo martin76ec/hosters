@@ -11,10 +11,17 @@
         showHosts();
     }
 
+    if(isset($_GET['page']) && $_GET['page'] == "myhires"){
+        session_start();
+        showHires();
+    }
+
     function showHome(){
         include 'view/layout/header.php';
         include 'view/layout/navbar.php';
         if(isset($_SESSION['user_id'])){
+            include 'controller/host/listMyHosts.php';
+            include 'view/catalogue.php';
             include 'view/layout/signout_modal.php';
         } else {
             include 'view/layout/signin_modal.php';
@@ -24,9 +31,21 @@
     }
 
     function showHosts(){
+        include 'controller/host/listMyHosts.php';
         include 'view/layout/header.php';
         include 'view/layout/navbar.php';
         include 'view/myrents.php';
+        include 'view/layout/add_host_modal.php';
+        include 'view/layout/signout_modal.php';
+        include 'view/layout/footer.php';
+    }
+
+    
+    function showHires(){
+        include 'controller/host/listMyHosts.php';
+        include 'view/layout/header.php';
+        include 'view/layout/navbar.php';
+        include 'view/myrenteds.php';
         include 'view/layout/add_host_modal.php';
         include 'view/layout/signout_modal.php';
         include 'view/layout/footer.php';

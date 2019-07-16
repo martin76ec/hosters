@@ -19,6 +19,10 @@
                         <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control-file" id="image" name="image">
+                    </div>
+                    <div class="form-group">
                         <label for="price" class="col-form-label">Price</label>
                         <input type="number" min=0 max=100000 class="form-control" id="price" name="price">
                     </div>

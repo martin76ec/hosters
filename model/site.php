@@ -11,15 +11,19 @@ include '../../model/database.php';
 //
 // ─────────────────────────────────────────────────────────────────── CREATE ─────
 //
-    function addSite($title, $description, $user_id, $price, $food){
+    function addSite($title, $description, $user_id, $price, $food, $image){
         $mbd = getConnector();
-        $query = $mbd->prepare("INSERT INTO `sites`(`title`, `description`, `user_id`, `priceperday`, `food`) 
-        VALUES ('$title', '$description', $user_id, $price, $food)");
-        try {
-            $query->execute();            
-        } catch (PDOException $e) {
-            Throw $e;
-        }
+        $query = $mbd->prepare("INSERT INTO sites(title, description, user_id, priceperday, food, image)
+                                VALUES(
+                                    '$title',
+                                    '$description',
+                                     $user_id,
+                                     $price,
+                                     $food,
+                                    '$image'
+                                )
+                                ");
+        $query->execute();
     }
 
     function addSiteImage($site_id, $link){
@@ -39,3 +43,4 @@ include '../../model/database.php';
 
     
 // ────────────────────────────────────────────────────────────────────────────────
+

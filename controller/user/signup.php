@@ -9,7 +9,11 @@
     $password = $_POST['password'];
 
     if (create($firstname, $lastname, $email, $password)) {
-        echo "SE CREO EL USUARIO!";
+        echo "<script>alert('Usuario creado correctamente');
+        window.location.href='../../index.php';
+        </script>";
     } else {
-        echo "NO SE PUDO CREAR!";
+        echo "<script>alert('No se puede crear el usuario');
+        window.location.href='../../index.php';
+        </script>";
     }

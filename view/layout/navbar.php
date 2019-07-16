@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://localhost/hosters">Catálogo <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?page=myhosts">Mis Inmuebles</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Arriendos</a>
+                    <a class="nav-link" href="index.php?page=myhires">Mis Arriendos</a>
                 </li>
             </ul>
             <div>
