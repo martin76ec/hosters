@@ -13,8 +13,8 @@
             echo '<div class="card-body">';
             echo '<h5 class="card-title">'.$value['title'].'</h5>';
             echo '<p class="card-text">'.$value['description'].'</p>';
-            echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].' por noche</small></p>';
-            echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? 'Incluye alimentación' : 'No incluye alimentación').'</small></p>';
+            echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].''.getLanguage($_SESSION['language'], 'pernight').'</small></p>';
+            echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? ''.getLanguage($_SESSION['language'], 'includes').'' : ''.getLanguage($_SESSION['language'], 'noincludes').'').'</small></p>';
            // echo '<button type="button" onclick="location.href = \'http://localhost/hosters/controller/host/deleteMyHost.php?id='.$value['id'].'\'" class="btn btn-danger">Danger</button>';
             echo '</div>';
             echo '</div>';
@@ -32,9 +32,9 @@
             echo '<div class="card-body">';
             echo '<h5 class="card-title">'.$value['title'].'</h5>';
             echo '<p class="card-text">'.$value['description'].'</p>';
-            echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].' por noche</small></p>';
-            echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? 'Incluye alimentación' : 'No incluye alimentación').'</small></p>';
-            echo '<button type="button" data-toggle="modal" data-target="#hostmodal'.$value['id'].'" class="btn btn-success">Arrendar</button>';
+            echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].''.getLanguage($_SESSION['language'], 'pernight').'</small></p>';
+            echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? ''.getLanguage($_SESSION['language'], 'includes').'' : ''.getLanguage($_SESSION['language'], 'noincludes').'').'</small></p>';
+            echo '<button type="button" data-toggle="modal" data-target="#hostmodal'.$value['id'].'" class="btn btn-success">'.getLanguage($_SESSION['language'], 'rent').'</button>';
             echo '</div>';
             echo '</div>';
 
@@ -49,11 +49,11 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    ¿Está seguro que desea arrendar este lugar?
+                    '.getLanguage($_SESSION['language'], 'confrent').'
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary" onclick = "location.href = \'http://localhost/hosters/controller/host/hireHost.php?id='.$value['id'].'\'">Sí</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">'.getLanguage($_SESSION['language'], 'Do not').'</button>
+                    <button type="button" class="btn btn-primary" onclick = "location.href = \'http://localhost/hosters/controller/host/hireHost.php?id='.$value['id'].'\'">'.getLanguage($_SESSION['language'], 'Yes').'</button>
                   </div>
                 </div>
               </div>
@@ -73,9 +73,9 @@
           echo '<div class="card-body">';
           echo '<h5 class="card-title">'.$value['title'].'</h5>';
           echo '<p class="card-text">'.$value['description'].'</p>';
-          echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].' por noche</small></p>';
-          echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? 'Incluye alimentación' : 'No incluye alimentación').'</small></p>';
-          echo '<button type="button" data-toggle="modal" data-target="#hostmodal'.$value['id'].'" class="btn btn-warning">Dar de alta</button>';
+          echo '<p class="card-text"><small class="text-muted">$'.$value['priceperday'].''.getLanguage($_SESSION['language'], 'pernight').'</small></p>';
+          echo '<p class="card-text"><small class="text-muted">'.( $value['food'] == 1 ? ''.getLanguage($_SESSION['language'], 'includes').'' : ''.getLanguage($_SESSION['language'], 'noincludes').'').'</small></p>';
+          echo '<button type="button" data-toggle="modal" data-target="#hostmodal'.$value['id'].'" class="btn btn-warning">'.getLanguage($_SESSION['language'], 'discharge').'</button>';
           echo '</div>';
           echo '</div>';
 
@@ -90,11 +90,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  ¿Está seguro que desea dar de alta este lugar?
+                  '.getLanguage($_SESSION['language'], 'dischargesite').'
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-primary" onclick = "location.href = \'http://localhost/hosters/controller/host/closeHost.php?id='.$value['id'].'\'">Sí</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">.'.getLanguage($_SESSION['language'], 'Do not').'</button>
+                  <button type="button" class="btn btn-primary" onclick = "location.href = \'http://localhost/hosters/controller/host/closeHost.php?id='.$value['id'].'\'">'.getLanguage($_SESSION['language'], 'Yes').'</button>
                 </div>
               </div>
             </div>
@@ -102,4 +102,3 @@
       }
       
   }
-

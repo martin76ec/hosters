@@ -1,5 +1,7 @@
 <?php
-
+    if(session_id() == ''){
+        $_SESSION['language'] = 'spanish';
+    }
     
     if(!isset($_GET['page'])){
         session_start();
@@ -17,6 +19,7 @@
     }
 
     function showHome(){
+        include 'controller/translate/translate.php';
         include 'view/layout/header.php';
         include 'view/layout/navbar.php';
         if(isset($_SESSION['user_id'])){
@@ -31,6 +34,7 @@
     }
 
     function showHosts(){
+        include 'controller/translate/translate.php';
         include 'controller/host/listMyHosts.php';
         include 'view/layout/header.php';
         include 'view/layout/navbar.php';
@@ -42,6 +46,7 @@
 
     
     function showHires(){
+        include 'controller/translate/translate.php';
         include 'controller/host/listMyHosts.php';
         include 'view/layout/header.php';
         include 'view/layout/navbar.php';

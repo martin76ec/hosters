@@ -2,18 +2,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesión</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><?php getLanguage($_SESSION['language'], 'Signoff') ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>¿Está seguro que desea cerrar sesión?</p>
+        <p><?php getLanguage($_SESSION['language'], 'conflogooff') ?></p>
       </div>
       <div class="modal-footer">
         <form action="controller/user/signout.php">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">No, quiero seguir viendo</button>
-          <button type="submit" class="btn btn-primary" >Sí, me tomaré un descanso</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php getLanguage($_SESSION['language'], 'keepin') ?></button>
+          <button type="submit" class="btn btn-primary" ><?php getLanguage($_SESSION['language'], '') ?></button>
         </form>
       </div>
     </div>

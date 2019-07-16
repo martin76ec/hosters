@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-07-2019 a las 08:24:43
+-- Tiempo de generación: 16-07-2019 a las 11:43:35
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -94,7 +94,13 @@ INSERT INTO `sessions` (`id`, `session_start`, `session_finish`, `user_id`, `clo
 (34, '2019-07-15 22:06:24', '2019-07-15 23:52:34', 15, 1),
 (35, '2019-07-15 23:52:48', '2019-07-16 01:13:19', 16, 1),
 (36, '2019-07-16 01:13:36', '2019-07-16 01:15:30', 16, 1),
-(37, '2019-07-16 01:16:18', NULL, 15, NULL);
+(37, '2019-07-16 01:16:18', '2019-07-16 03:29:37', 15, 1),
+(38, '2019-07-16 03:32:32', '2019-07-16 03:34:10', 15, 1),
+(39, '2019-07-16 03:35:14', '2019-07-16 03:36:44', 15, 1),
+(40, '2019-07-16 03:45:34', '2019-07-16 03:45:40', 15, 1),
+(41, '2019-07-16 03:47:59', '2019-07-16 03:48:02', 15, 1),
+(42, '2019-07-16 03:57:47', '2019-07-16 03:57:51', 15, 1),
+(43, '2019-07-16 04:14:22', '2019-07-16 04:36:08', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -154,10 +160,45 @@ CREATE TABLE `site_translation` (
 CREATE TABLE `translations` (
   `id` varchar(15) NOT NULL,
   `spanish` varchar(220) NOT NULL,
-  `catari` varchar(220) NOT NULL,
-  `russian` varchar(220) NOT NULL,
+  `catari` varchar(220) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `russian` varchar(220) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `english` varchar(220) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `translations`
+--
+
+INSERT INTO `translations` (`id`, `spanish`, `catari`, `russian`, `english`) VALUES
+('Catalogue', 'Catalogo', 'فهرس', 'каталог', 'Catalogue'),
+('Myproperties', 'Mis inmuebles', 'ممتلكاتي', 'Мои объекты', 'My properties'),
+('Misarriendos', 'Mis arriendos', 'بلدي عقود الإيجار', 'Мои договоры аренды', 'My leases'),
+('Sign up', 'Registrate', 'التسجيل', 'Регистрация', 'Sign up'),
+('Login', 'Iniciar sesion', 'دخول', 'Войти', 'Log in'),
+('Signoff', 'Cerrar Sesion', 'الخروج', 'Выход', 'Sign off'),
+('conflogooff', '¿Está seguro que desea cerrar sesión?', 'هل أنت متأكد أنك تريد تسجيل الخروج؟', 'Вы уверены, что хотите выйти?', 'Are you sure you want to log off?'),
+('keepin', 'No, quiero seguir viendo', 'لا، أريد أن تبقي مشاهدة', 'Нет, я хочу продолжать смотреть', 'No, I want to keep watching'),
+('', 'Si, me tomare un descanso ', 'إذا كنت تأخذ استراحة', 'Если я отдыхаю', 'If I take a break'),
+('Tolease', 'Arrendar', 'عقد الإيجار', 'аренда', 'To lease'),
+('rent', 'Arrendar', 'عقد الإيجار', 'аренда', 'To lease'),
+('confrent', '¿Está seguro que desea arrendar este lugar?', 'هل أنت متأكد أنك ترغب في استئجار هذا المكان؟', 'Вы уверены, что хотите арендовать это место?', 'Are you sure you want to rent this place?'),
+('Yes', 'Si', 'إذا', 'если', 'Yes'),
+('Yes', 'Si', 'إذا', 'если', 'Yes'),
+('Do not', 'No', 'ليس', 'не', 'Do not'),
+('rentsucc', 'Renta registrada con exito', 'استئجار التسجيل بنجاح', 'Прокат успешно зарегистрирован', 'Rent successfully registered'),
+('usercreated', 'Usuario creado correctamente', 'المستخدم إنشاء بنجاح', 'Пользователь успешно создан', 'User created successfully'),
+('Error', 'Error', 'خطأ', 'ошибка', 'Error'),
+('email', 'email', 'البريد الإلكتروني', '\r\nпо электронной почте', 'email'),
+('password', 'contraseña', 'كلمة المرور', 'пароль', 'password'),
+('name', 'nombre', 'اسم', 'имя', 'name'),
+('lastname', 'apellido', 'لقب\r\n', 'фамилия', 'lastname'),
+('cancel', 'cancelar', 'إلغاء', 'отменить', 'cancel'),
+('pernight', 'por noche', 'في الليلة', '\r\nза ночь', 'per night'),
+('includes', 'incluye alimentación', 'يشمل الغذاء', '\r\nвключает в себя еду', 'food included'),
+('noincludes', 'no incluye alimentación', 'لا يشمل الغذاء\r\n', 'не включает еду', 'food not included'),
+('discharge', 'dar de alta', 'تفريغ', 'разряд', 'discharge'),
+('dischargesite', '¿Está seguro que desea dar de alta este lugar?', 'هل أنت متأكد أنك تريد تسجيل هذا', 'Вы уверены, что хотите зарегистрировать это место?', '\r\nAre you sure you want to register this place?'),
+('addhost', 'añadir inmueble', 'إضافة الممتلكات', 'добавить недвижимость', 'add property');
 
 -- --------------------------------------------------------
 
@@ -253,7 +294,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT de la tabla `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `sites`
